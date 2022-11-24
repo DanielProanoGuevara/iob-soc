@@ -50,6 +50,22 @@ int main()
   //test printf with floats 
   printf("Value of Pi = %f\n\n", 3.1415);
 
+  //print first 100 values of Fibonacci
+  int a = 0;
+  int i;
+
+  printf("%d \n", a);
+
+  a += 1;
+  printf("%d \n", a);
+
+  for(i=0; i <= 97; i++){
+    printf("%d \n", a);
+    a += a;
+  }
+  
+  
+
   //test file send
   char *sendfile = malloc(1000);
   int send_file_size = 0;
