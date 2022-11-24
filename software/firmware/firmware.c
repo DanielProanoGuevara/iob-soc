@@ -51,17 +51,20 @@ int main()
   printf("Value of Pi = %f\n\n", 3.1415);
 
   //print first 100 values of Fibonacci
-  int a = 0;
+  unsigned long t1 = 0, t2 = 1;
+  unsigned long next = t1 + t2;
   int i;
 
-  printf("%d \n", a);
+  printf("%d \n", t1);
 
-  a += 1;
-  printf("%d \n", a);
+  printf("%d \n", t2);
 
   for(i=0; i <= 97; i++){
-    printf("%d \n", a);
-    a += a;
+    printf("%d \n", next);
+    t1 = t2;
+    t2 = next;
+    next = t1 + t2;
+   
   }
   
   
