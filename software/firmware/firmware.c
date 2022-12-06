@@ -45,23 +45,25 @@ int main()
   //init uart
   uart_init(UART_BASE,FREQ/BAUD);
 
+  /*
   //test puts
   uart_puts("\n\n\nHello world!\n\n\n");
 
   //test printf with floats 
   printf("Value of Pi = %f\n\n", 3.1415);
+  */
 
    /****************************GPIO***********************/
   gpio_init(GPIO_BASE);
   gpio_set_output_enable(0x01);
-  //gpio_set(0x01);
-  //int a = 0;
-  // a = gpio_get();
-  //printf("received :%d \n", a);
+  gpio_set(0x01);
+  int a = 0;
+  a = gpio_get();
+  printf("\n GPIO received :%d \n", a);
 
   
 
-  //print first 100 values of Fibonacci
+  /* //print first 100 values of Fibonacci
   unsigned long t1 = 0, t2 = 1;
   unsigned long next = t1 + t2;
   int i;
@@ -76,7 +78,7 @@ int main()
     t2 = next;
     next = t1 + t2;   
   }
-
+  */
  
   
   
