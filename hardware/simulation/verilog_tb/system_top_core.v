@@ -90,6 +90,41 @@ module system_top
       );   
 `endif
 
+   ///////////////////////////////////////////////
+   // GPIO submodule test
+   reg [32-1:0] gpio_input_excitation = 0;
+   assign gpio_input = gpio_input_excitation;
+
+   //Procedure for modifying the input
+   initial begin
+
+      gpio_input_excitation = 0; //Initialize the value (get out of tristate)
+
+      #300000 gpio_input_excitation = 2; //After 100 timestamps get gpio_input register to 0b10
+      
+      #300000 gpio_input_excitation = 0;
+
+      #300000 gpio_input_excitation = 2;
+
+      #300000 gpio_input_excitation = 0;
+
+      #300000 gpio_input_excitation = 2;
+      
+      #300000 gpio_input_excitation = 0;
+
+      #300000 gpio_input_excitation = 2;
+     
+      #300000 gpio_input_excitation = 0;
+
+      #300000 gpio_input_excitation = 2;
+      
+      #300000 gpio_input_excitation = 0;
+
+      #300000 gpio_input_excitation = 2;
+      
+
+   end
+   
    
    //finish simulation on trap
    /* always @(posedge trap) begin
