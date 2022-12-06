@@ -2,6 +2,7 @@
 #include "periphs.h"
 #include "iob-uart.h"
 #include "printf.h"
+#include "iob-gpio.h"
 
 char *send_string = "Sending this string as a file to console.\n"
                     "The file is then requested back from console.\n"
@@ -50,6 +51,16 @@ int main()
   //test printf with floats 
   printf("Value of Pi = %f\n\n", 3.1415);
 
+   /****************************GPIO***********************/
+  gpio_init(GPIO_BASE);
+  gpio_set_output_enable(0x01);
+  //gpio_set(0x01);
+  //int a = 0;
+  // a = gpio_get();
+  //printf("received :%d \n", a);
+
+  
+
   //print first 100 values of Fibonacci
   unsigned long t1 = 0, t2 = 1;
   unsigned long next = t1 + t2;
@@ -63,9 +74,11 @@ int main()
     printf("%d \n", next);
     t1 = t2;
     t2 = next;
-    next = t1 + t2;
-   
+    next = t1 + t2;   
   }
+
+ 
+  
   
   
 
