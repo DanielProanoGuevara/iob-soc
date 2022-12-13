@@ -57,7 +57,7 @@ int main()
   gpio_init(GPIO_BASE);
   gpio_set_output_enable(0x01);
   //gpio_set(0x01);
-  int a = 0;
+  int a = 0, b = 0;
   a = gpio_get();
   printf("\n GPIO received :%d \n", a);
 
@@ -67,10 +67,14 @@ int main()
   while(1){
     a = gpio_get();
     //mask the value and make it suitable for outputs
-    if(a & 0x02) {
-      gpio_set(0x01);      
-    } else{
+    if((a & 0x02) && (a != b)) {
+      gpio_set(0x01);
+      printf("\n GPIO received :%d \n", a);
+      b = a;
+    } else if ((a == 0) && (a != b)){
       gpio_set(0x00);
+      printf("\n GPIO received :%d \n", a);
+      b = a;
     }
     
 

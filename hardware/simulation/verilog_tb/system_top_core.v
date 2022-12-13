@@ -122,7 +122,9 @@ module system_top
 
       #300000 gpio_input_excitation = 2;
       
-
+      #300000 $finish;
+      
+      
    end
    
    
