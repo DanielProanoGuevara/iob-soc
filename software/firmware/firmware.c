@@ -61,12 +61,17 @@ int main()
   a = gpio_get();
   printf("\n GPIO received :%d \n", a);
 
+  // Forever loop: will map the inputs into the outputs
+  // To visualize changes init with make sim-build VDC=1
+  // Observe the waveforms log
   while(1){
     a = gpio_get();
     //mask the value and make it suitable for outputs
     if(a & 0x02) {
       gpio_set(0x01);      
-    } else{gpio_set(0x00);}
+    } else{
+      gpio_set(0x00);
+    }
     
 
   }
