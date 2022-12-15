@@ -39,9 +39,9 @@ set_property IOSTANDARD LVCMOS33 [get_ports uart_txd]
 ## GPIO Interface
 
 # LEDs
-set_property PACKAGE_PIN U16 [get_ports gpio[0]]
-set_property IOSTANDARD LVCMOS33 [get_ports gpio[0]]
+set_property PACKAGE_PIN U16 [get_ports gpio_output]
+set_property IOSTANDARD LVCMOS33 [get_ports gpio_output]
 
 # Switches
-set_property PACKAGE_PIN V17 [get_ports gpio[1]]
-set_property IOSTANDARD LVCMOS33 [get_ports gpio[1]]
+set_property PACKAGE_PIN V17 [get_ports gpio_input]
+set_property IOSTANDARD LVCMOS33 [get_ports gpio_input]

@@ -7,7 +7,10 @@ module top_system(
 
 	          //uart
 	          output        uart_txd,
-	          input         uart_rxd
+	          input         uart_rxd,
+		  //gpio
+		  input         gpio_input,
+		  output        gpio_output
 		  );
 
    //
@@ -46,7 +49,11 @@ module top_system(
       .uart_txd      (uart_txd),
       .uart_rxd      (uart_rxd),
       .uart_rts      (),
-      .uart_cts      (1'b1)
+      .uart_cts      (1'b1),
+
+      //GPIO
+      .gpio_input   (gpio_input),
+      .gpio_output  (gpio_output)
       );
 
 endmodule
