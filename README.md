@@ -7,6 +7,10 @@ selected, an instruction L1 cache, a data L1 cache and a shared L2 cache are
 added to the system. The L2 cache communicates with a 3rd party memory
 controller IP (typically a DDR controller) using an AXI4 master bus.
 
+# ESC project repo
+
+The repository is held and maintained by Daniel Proaño & Pedro Faria. It can be found [here](https://github.com/pedrogsfaria/iob-soc-project)
+
 ## Virtual Machine
 
 IOb-SoC can be run on a VirtualBox VM. This way, the system can be quickly tried
